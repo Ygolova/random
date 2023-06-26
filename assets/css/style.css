@@ -317,8 +317,17 @@ template {
   display: none;
 }
 
+* {
+  overflow-x: hidden;
+  overflow-y: hidden;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
 .container {
   display: grid;
+  grid-template-rows: 50vh 1fr;
   width: 100%;
   height: 100vh;
   background-color: black;
@@ -328,7 +337,8 @@ template {
 .header {
   display: grid;
   background-color: purple;
-  align-items: center;
+  align-items: end;
+  padding-bottom: 20px;
 }
 .header-btn {
   font-family: "Roboto Slab";
@@ -344,20 +354,17 @@ template {
   cursor: pointer;
   grid-area: a1;
   width: 100px;
+  box-shadow: 7px 8px 18px rgba(24, 190, 255, 0.6235294118);
 }
 .header-btn-Name:nth-of-type(2) {
   cursor: pointer;
   grid-area: a2;
   width: 100px;
+  box-shadow: 7px 8px 18px rgba(26, 184, 224, 0.7450980392);
 }
 .header-btn-Name:nth-of-type(3) {
   grid-area: a3;
-}
-
-.Nazar {
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  box-shadow: 0px -9px 18px rgba(255, 255, 255, 0.6431372549);
 }
 
 .button {
@@ -379,13 +386,36 @@ template {
   padding: 10px;
 }
 
+.difference {
+  font-size: 20px;
+  font-family: "Roboto Slab";
+  font-weight: 700;
+  text-align: center;
+  width: 200px;
+  color: rgb(255, 255, 255);
+  background-color: red;
+  border: 2px solid black;
+}
+@media (max-width: 575.8px) {
+  .difference {
+    width: 170px;
+    height: 35px;
+  }
+}
+
 .results {
   display: grid;
+  justify-content: center;
   background-color: red;
   gap: 150px;
 }
 .results-back {
   padding: 0 50px;
+}
+@media (max-width: 575.8px) {
+  .results-back {
+    padding: 10px;
+  }
 }
 .results-back__grid {
   display: grid;
@@ -397,8 +427,39 @@ template {
   margin: 10px auto;
   text-align: center;
 }
+@media (max-width: 575.8px) {
+  .results-back__grid {
+    gap: 20px;
+  }
+}
 .results-back__grid__numbers {
-  width: 100%;
+  font-family: "Roboto Slab";
+  display: grid;
+  align-items: center;
+  width: 225px;
   height: 100px;
   background-color: orange;
+}
+@media (max-width: 575.8px) {
+  .results-back__grid__numbers {
+    width: 170px;
+    font-size: 1.5em;
+  }
+}
+.results-back__footer {
+  display: grid;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  gap: 70px;
+  grid-template-areas: "a a";
+  height: 53px;
+  width: 700px;
+  background-color: rgba(93, 52, 52, 0.4509803922);
+}
+@media (max-width: 575.8px) {
+  .results-back__footer {
+    gap: 10px;
+    width: 100%;
+  }
 }

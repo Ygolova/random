@@ -1,5 +1,5 @@
 const names = document.querySelectorAll('.header-btn-Name');
-const results = document.querySelectorAll('.results-back__grid__numbers');
+const results = document.querySelectorAll('.h1');
 const y = document.querySelector('.button');
 console.log(results);
 
@@ -8,6 +8,8 @@ function random(math) {
 }
 
 console.log(names[1]);
+
+
 
 function assignClickHandlers() {
   names[0].onclick = () => {
