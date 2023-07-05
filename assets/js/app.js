@@ -100,6 +100,18 @@ function createClickHandlers() {
     storedNumber2 = null; // Переменная для сохранения второго числа
 
     butt.value = 'accept';
+
+    setInterval(() => {
+      if (typeof storedNumber == 'number' && typeof storedNumber2 == 'number') {
+        document.querySelectorAll('.difference').forEach((el) => {
+          el.removeAttribute('disabled');
+        });
+
+        document.querySelectorAll('.opacity').forEach((el) => {
+          el.classList.remove('opacity');
+        });
+      }
+    }, 100);
   };
 
   let storedNumber = null; // Переменная для сохранения первого числа
@@ -287,6 +299,12 @@ function createClickHandlers() {
         butt.value = 'Заново';
 
         console.log(storedNumber.toFixed(0), storedNumber2.toFixed(0));
+
+        // setInterval(() => {
+        //   if (butt.value == 'Заново') {
+        //     names[2].onclick = false
+        //   }
+        // }, 100);
       }
     }
     if (+i1.innerHTML > +i2.innerHTML) {
@@ -299,10 +317,7 @@ function createClickHandlers() {
       i1.style.color = 'gray';
       i2.style.color = 'gray';
     }
-    if (
-      typeof storedNumber == 'number' &&
-      typeof storedNumber2 == 'number'
-    ) {
+    if (typeof storedNumber == 'number' && typeof storedNumber2 == 'number') {
       if (storedNumber > storedNumber2) {
         n1++;
         i1.textContent = n1;
@@ -312,7 +327,6 @@ function createClickHandlers() {
       }
     }
   };
-
 }
 createClickHandlers();
 // console.log(names[1]);
